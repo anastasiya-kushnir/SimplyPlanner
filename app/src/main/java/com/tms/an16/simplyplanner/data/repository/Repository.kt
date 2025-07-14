@@ -2,9 +2,11 @@ package com.tms.an16.simplyplanner.data.repository
 
 import com.tms.an16.simplyplanner.data.DAO
 import com.tms.an16.simplyplanner.data.model.Task
+import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
+@ViewModelScoped
 class Repository @Inject constructor(private val dao: DAO) {
 
     val getAllTasks: Flow<List<Task>> = dao.getAllTasks()
